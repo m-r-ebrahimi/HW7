@@ -14,5 +14,5 @@ public abstract class NewspaperSubscription {
     }
 
     public abstract void setAddress(String address);
-    public abstract void setPrice();
+    public abstract void setPrice(int price);
 }

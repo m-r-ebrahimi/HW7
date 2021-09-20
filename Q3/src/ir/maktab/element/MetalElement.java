@@ -8,10 +8,12 @@ public class MetalElement extends Element {
 
     @Override
     protected void describeElement() {
-        System.out.println("Metal Element:" +
+        System.out.println("\n=====================\n" +
+                "Metal Element:" +
                 "\n\tSymbol : " + this.getSymbol() +
                 "\n\tAtomic Number : " + this.getAtomicNumber() +
                 "\n\tAtomic Weight : " + this.getAtomicWeight() +
-                "\n\ta metal element is an element that form positive ions and has metallic bonds. Most elements on the periodic table are metals. Examples of metal elements include iron, copper, silver, mercury, lead, aluminum, gold, platinum, zinc, nickel and tin.");
+                "\n\ta metal element is an element that form positive ions and has metallic bonds. Most elements on the periodic table are metals. Examples of metal elements include iron, copper, silver, mercury, lead, aluminum, gold, platinum, zinc, nickel and tin." +
+                "=====================\n\n\n");
     }
 }

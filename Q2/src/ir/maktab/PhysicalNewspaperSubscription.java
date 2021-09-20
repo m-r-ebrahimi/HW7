@@ -5,7 +5,7 @@ public class PhysicalNewspaperSubscription extends NewspaperSubscription{
     @Override
     public void setAddress(String address) {
         address = address.trim();
-        if(checkString(address)){
+        if(checkStringHaveDigit(address)){
             super.address=address;
             setPrice(15);
         }else{
@@ -19,7 +19,7 @@ public class PhysicalNewspaperSubscription extends NewspaperSubscription{
         super.price=price;
     }
 
-    private boolean checkString(String str){
+    private boolean checkStringHaveDigit(String str){
         for (int i = 0; i < str.length(); i++) {
             if(Character.isLetter(str.charAt(i)))
                 return true;

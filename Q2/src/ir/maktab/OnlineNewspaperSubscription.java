@@ -22,4 +22,13 @@ public class OnlineNewspaperSubscription extends NewspaperSubscription{
     private boolean checkString(String str){
         return str.contains("@");
     }
+
+    @Override
+    public String toString() {
+        return "OnlineNewspaperSubscription{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", price=" + price +"$"+
+                '}';
+    }
 }

@@ -26,5 +26,14 @@ public class PhysicalNewspaperSubscription extends NewspaperSubscription{
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "PhysicalNewspaperSubscription{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", price=" + price +"$"+
+                '}';
+    }
 }
 

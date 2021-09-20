@@ -1,6 +1,6 @@
-package ir.maktab;
+package ir.maktab.subscription;
 
-public class OnlineNewspaperSubscription extends NewspaperSubscription{
+public class OnlineNewspaperSubscription extends NewspaperSubscription {
     public OnlineNewspaperSubscription() {
     }
 
@@ -11,7 +11,7 @@ public class OnlineNewspaperSubscription extends NewspaperSubscription{
     @Override
     public void setAddress(String address) {
         address = address.trim();
-        if(checkString(address)){
+        if(checkStringToHaveAtSign(address)){
             super.address=address;
             setPrice(9);
         }else{
@@ -25,7 +25,7 @@ public class OnlineNewspaperSubscription extends NewspaperSubscription{
         super.price=price;
     }
 
-    private boolean checkString(String str){
+    private boolean checkStringToHaveAtSign(String str){
         return str.contains("@");
     }
 

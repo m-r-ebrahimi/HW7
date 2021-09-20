@@ -23,4 +23,5 @@ public abstract class Element {
         return atomicWeight;
     }
     protected abstract void describeElement();
+
 }

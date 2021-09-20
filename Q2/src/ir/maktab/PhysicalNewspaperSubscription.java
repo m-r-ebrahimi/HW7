@@ -1,6 +1,12 @@
 package ir.maktab;
 
 public class PhysicalNewspaperSubscription extends NewspaperSubscription{
+    public PhysicalNewspaperSubscription() {
+    }
+
+    public PhysicalNewspaperSubscription(String name) {
+        super(name);
+    }
 
     @Override
     public void setAddress(String address) {

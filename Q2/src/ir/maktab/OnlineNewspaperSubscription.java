@@ -1,6 +1,12 @@
 package ir.maktab;
 
 public class OnlineNewspaperSubscription extends NewspaperSubscription{
+    public OnlineNewspaperSubscription() {
+    }
+
+    public OnlineNewspaperSubscription(String name) {
+        super(name);
+    }
 
     @Override
     public void setAddress(String address) {

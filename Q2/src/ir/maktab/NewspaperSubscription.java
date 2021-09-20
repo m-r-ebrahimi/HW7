@@ -5,6 +5,13 @@ public abstract class NewspaperSubscription {
     protected String address;
     protected int price;
 
+    public NewspaperSubscription() {
+    }
+
+    public NewspaperSubscription(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
@@ -15,4 +22,5 @@ public abstract class NewspaperSubscription {
 
     public abstract void setAddress(String address);
     public abstract void setPrice(int price);
+
 }

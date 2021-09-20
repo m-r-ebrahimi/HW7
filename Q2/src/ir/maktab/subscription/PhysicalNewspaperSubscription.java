@@ -1,6 +1,6 @@
-package ir.maktab;
+package ir.maktab.subscription;
 
-public class PhysicalNewspaperSubscription extends NewspaperSubscription{
+public class PhysicalNewspaperSubscription extends NewspaperSubscription {
     public PhysicalNewspaperSubscription() {
     }
 
@@ -27,7 +27,7 @@ public class PhysicalNewspaperSubscription extends NewspaperSubscription{
 
     private boolean checkStringHaveDigit(String str){
         for (int i = 0; i < str.length(); i++) {
-            if(Character.isLetter(str.charAt(i)))
+            if(Character.isDigit(str.charAt(i)))
                 return true;
         }
         return false;

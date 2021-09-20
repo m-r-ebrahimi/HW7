@@ -3,7 +3,7 @@ package ir.maktab;
 public abstract class NewspaperSubscription {
     protected String name;
     protected String address;
-    protected String price;
+    protected int price;
 
     public String getName() {
         return name;
@@ -13,6 +13,6 @@ public abstract class NewspaperSubscription {
         this.name = name;
     }
 
-    public abstract void setAddress();
+    public abstract void setAddress(String address);
     public abstract void setPrice();
 }

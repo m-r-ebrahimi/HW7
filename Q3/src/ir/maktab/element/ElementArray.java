@@ -11,7 +11,7 @@ public class ElementArray {
     }
     private static void print(Element[] elements) {
         for (Element element : elements) {
-            System.out.println(element);
+            element.describeElement();
         }
     }
 }

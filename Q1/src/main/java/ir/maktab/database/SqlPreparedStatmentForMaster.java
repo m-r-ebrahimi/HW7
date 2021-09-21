@@ -15,15 +15,13 @@ public class SqlPreparedStatmentForMaster {
     public SqlPreparedStatmentForMaster() throws SQLException, ClassNotFoundException {
     }
 
-    /*public void addMaster() throws SQLException {
-        String query = " INSERT INTO university.master\n" +
-                "(first_name, last_name)\n" +
-                "VALUES(?, ?);\n";
+    public void addMaster() throws SQLException {
+        String query = " INSERT INTO university.master (first_name, last_name) VALUES(?, ?);";
         ps = connection.prepareStatement(query);
         System.out.println("Enter master' firstname : ");
         ps.setString(1, scanner.nextLine());
         System.out.println("Enter master' lastname : ");
         ps.setString(2, scanner.nextLine());
         ps.executeUpdate();
-    }*/
+    }
 }

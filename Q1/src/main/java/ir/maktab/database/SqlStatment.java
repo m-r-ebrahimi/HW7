@@ -8,17 +8,13 @@ import java.util.Scanner;
 
 public class SqlStatment {
     private final Scanner scanner = new Scanner(System.in);
-    private static String QUERYPRINT;
-    private static String QUERYINSERT;
-    private static String QUERYUPDATE;
-    private static String QUERYDELETE;
     private final Connection connection = DbConnection.createConnection();
     private PreparedStatement ps;
 
     public SqlStatment() throws SQLException, ClassNotFoundException {
     }
 
-    public void add() throws SQLException {
+    public void add(String QUERYINSERT) throws SQLException {
         ps = connection.prepareStatement(QUERYINSERT);
         System.out.println("Enter firstname : ");
         ps.setString(1, scanner.nextLine());
@@ -27,9 +23,8 @@ public class SqlStatment {
         ps.executeUpdate();
     }
 
-    public void update() throws SQLException {
+    public void update(String QUERYUPDATE) throws SQLException {
         System.out.println();
-        print();
         ps = connection.prepareStatement(QUERYUPDATE);
         System.out.println("Enter id: ");
         ps.setInt(3, scanner.nextInt());
@@ -41,9 +36,8 @@ public class SqlStatment {
         ps.executeUpdate();
     }
 
-    public void delete() throws SQLException {
+    public void delete(String QUERYDELETE) throws SQLException {
         System.out.println();
-        print();
         ps = connection.prepareStatement(QUERYDELETE);
         System.out.println("Enter student' id: ");
         ps.setInt(1, scanner.nextInt());
@@ -51,7 +45,7 @@ public class SqlStatment {
         ps.executeUpdate();
     }
 
-    public void print() throws SQLException {
+    public void print(String QUERYPRINT) throws SQLException {
         ps = connection.prepareStatement(QUERYPRINT);
         ResultSet resultSet = ps.executeQuery();
         System.out.println("id\t\tfirstName\t\tlastName");

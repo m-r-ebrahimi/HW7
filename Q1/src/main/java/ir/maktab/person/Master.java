@@ -6,7 +6,7 @@ import ir.maktab.database.SqlStatment;
 import java.sql.SQLException;
 
 public class Master extends Person {
-    private final SqlStatment sql = new SqlPreparedStatmentForMaster();
+    private final SqlPreparedStatmentForMaster sql = new SqlPreparedStatmentForMaster();
     private int id;
 
     public Master() throws SQLException, ClassNotFoundException {

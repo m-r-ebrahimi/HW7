@@ -15,7 +15,7 @@ public class OnlineNewspaperSubscription extends NewspaperSubscription {
             super.address=address;
             setPrice(9);
         }else{
-            System.out.println("Exception!!!");
+            super.address="Exception";
             setPrice(0);
         }
     }

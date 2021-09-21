@@ -1,4 +1,4 @@
-package ir.maktab.runner;
+package ir.maktab.person;
 
 import java.sql.SQLException;
 

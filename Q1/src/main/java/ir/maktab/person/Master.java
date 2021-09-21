@@ -32,5 +32,15 @@ public class Master extends Person {
         sql.print();
     }
 
+    @Override
+    public void addMaster() {
+
+    }
+
+    @Override
+    public void printStudentsMaster() {
+
+    }
+
 
 }

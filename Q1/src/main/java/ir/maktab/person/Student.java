@@ -34,5 +34,11 @@ public class Student extends Person {
         sql.print();
     }
 
+    public void addMaster() throws SQLException {
+        sql.addMaster();
+    }
 
+    public void printStudentsMaster() throws SQLException {
+        sql.printStudentsMaster();
+    }
 }

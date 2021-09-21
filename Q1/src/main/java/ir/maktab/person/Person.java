@@ -33,4 +33,7 @@ public abstract class Person {
 
     public abstract void printDatabase() throws SQLException;
 
+    public abstract void addMaster() throws SQLException;
+
+    public abstract void printStudentsMaster() throws SQLException;
 }

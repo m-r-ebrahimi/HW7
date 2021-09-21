@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SqlStatment {
-    private final Scanner scanner = new Scanner(System.in);
-    private final Connection connection = DbConnection.createConnection();
-    private PreparedStatement ps;
+    protected final Scanner scanner = new Scanner(System.in);
+    protected final Connection connection = DbConnection.createConnection();
+    protected PreparedStatement ps;
 
     public SqlStatment() throws SQLException, ClassNotFoundException {
     }

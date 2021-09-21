@@ -23,21 +23,23 @@ public class Demo {
 
     public static void run() {
         int select;
-        try{
+        try {
             do {
                 System.out.println("""
-                    ==============================
-                    1)See Students
-                    2)See Masters
-                    3)Add Student
-                    4)Add Master
-                    5)Delete Student
-                    6)Delete Master
-                    7)Update Student
-                    8)Update Master
-                    0)EXIT
-                    """);
-                select=scanner.nextInt();
+                        ==============================
+                        1)See Students
+                        2)See Masters
+                        3)Add Student
+                        4)Add Master
+                        5)Delete Student
+                        6)Delete Master
+                        7)Update Student
+                        8)Update Master
+                        9)Add Master To Student
+                        10)See Student's Masters
+                        0)EXIT
+                        """);
+                select = scanner.nextInt();
                 switch (select) {
                     case 1 -> student.printDatabase();
                     case 2 -> master.printDatabase();
@@ -47,9 +49,12 @@ public class Demo {
                     case 6 -> master.deleteDatabase();
                     case 7 -> student.updateDatabase();
                     case 8 -> master.updateDatabase();
+                    case 9 -> student.addMaster();
+                    case 10 -> student.printStudentsMaster();
+                    default -> System.out.println("Invalid Input!!!");
                 }
             } while (select != 0);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

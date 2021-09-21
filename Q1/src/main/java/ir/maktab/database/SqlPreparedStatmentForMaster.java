@@ -14,7 +14,7 @@ public class SqlPreparedStatmentForMaster {
     }
 
     public void addMaster() throws SQLException {
-        String query = "INSERT INTO university.master (first_name, last_name) VALUES(?, ?);";
+        String query = " INSERT INTO university.master (first_name, last_name) VALUES(?, ?);";
         ps = connection.prepareStatement(query);
         System.out.println("Enter master' firstname : ");
         ps.setString(1, scanner.nextLine());

@@ -60,5 +60,6 @@ public class SqlPreparedStatmentForStudent {
             String lastName=resultSet.getString("last_name");
             System.out.println(id+"\t\t"+firstName+"\t\t"+lastName);
         }
+
     }
 }

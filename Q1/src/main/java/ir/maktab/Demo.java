@@ -9,11 +9,23 @@ import java.util.Scanner;
 
 public class Demo {
     private static final Scanner scanner = new Scanner(System.in);
-    private static Person person;
-    public static void run() throws SQLException, ClassNotFoundException {
+    private static Person student;
+    private static Person master;
+
+    static {
+        try {
+            student = new Student();
+            master = new Master();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void run() {
         int select;
-        do {
-            System.out.println("""
+        try{
+            do {
+                System.out.println("""
                     ==============================
                     1)See Students
                     2)See Masters
@@ -25,41 +37,20 @@ public class Demo {
                     8)Update Master
                     0)EXIT
                     """);
-            select=scanner.nextInt();
-            switch (select) {
-                case 1 -> {
-                    person = new Student();
-                    person.printDatabase();
+                select=scanner.nextInt();
+                switch (select) {
+                    case 1 -> student.printDatabase();
+                    case 2 -> master.printDatabase();
+                    case 3 -> student.addToDatabase();
+                    case 4 -> master.addToDatabase();
+                    case 5 -> student.deleteDatabase();
+                    case 6 -> master.deleteDatabase();
+                    case 7 -> student.updateDatabase();
+                    case 8 -> master.updateDatabase();
                 }
-                case 2 -> {
-                    person = new Master();
-                    person.printDatabase();
-                }
-                case 3 -> {
-                    person = new Student();
-                    person.addToDatabase();
-                }
-                case 4 -> {
-                    person = new Master();
-                    person.addToDatabase();
-                }
-                case 5 -> {
-                    person = new Student();
-                    person.deleteDatabase();
-                }
-                case 6 -> {
-                    person = new Master();
-                    person.deleteDatabase();
-                }
-                case 7 -> {
-                    person = new Student();
-                    person.updateDatabase();
-                }
-                case 8 -> {
-                    person = new Master();
-                    person.updateDatabase();
-                }
-            }
-        } while (select != 0);
+            } while (select != 0);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

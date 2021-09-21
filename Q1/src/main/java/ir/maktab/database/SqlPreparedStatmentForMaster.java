@@ -1,15 +1,13 @@
 package ir.maktab.database;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Scanner;
 
 public class SqlPreparedStatmentForMaster {
     private Scanner scanner = new Scanner(System.in);
     private static final String QUERY = "SELECT * FROM university.master";
-    private Connection connection=DbConnection.createConnection();
+    private Connection connection = DbConnection.createConnection();
     private PreparedStatement ps;
 
     public SqlPreparedStatmentForMaster() throws SQLException, ClassNotFoundException {
@@ -23,5 +21,31 @@ public class SqlPreparedStatmentForMaster {
         System.out.println("Enter master' lastname : ");
         ps.setString(2, scanner.nextLine());
         ps.executeUpdate();
+    }
+
+    public void updateMaster() throws SQLException {
+        System.out.println();
+        printMasters();
+        String query = " UPDATE university.master SET first_name=?, last_name=? WHERE id=?;";
+        ps = connection.prepareStatement(query);
+        System.out.println("Enter master' id: ");
+        ps.setInt(3, scanner.nextInt());
+        scanner.nextLine();
+        System.out.println("Enter new first name:");
+        ps.setString(1, scanner.nextLine());
+        System.out.println("Enter new last name:");
+        ps.setString(2, scanner.nextLine());
+    }
+
+    public void printMasters() throws SQLException {
+        ps = connection.prepareStatement(QUERY);
+        ResultSet resultSet = ps.executeQuery();
+        System.out.println("id\tfirstName\tlastName");
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String firstName = resultSet.getString("first_name");
+            String lastName = resultSet.getString("last_name");
+            System.out.println(id + "\t" + firstName + "\t" + lastName);
+        }
     }
 }

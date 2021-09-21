@@ -36,6 +36,7 @@ public class SqlPreparedStatmentForStudent {
         ps.setString(1, scanner.nextLine());
         System.out.println("Enter new last name:");
         ps.setString(2, scanner.nextLine());
+        ps.executeUpdate();
     }
 
     public void deleteStudent() throws SQLException {
@@ -46,17 +47,18 @@ public class SqlPreparedStatmentForStudent {
         System.out.println("Enter student' id: ");
         ps.setInt(1, scanner.nextInt());
         scanner.nextLine();
+        ps.executeUpdate();
     }
 
     public void printStudents() throws SQLException {
         ps = connection.prepareStatement(QUERY);
         ResultSet resultSet=ps.executeQuery();
-        System.out.println("id\tfirstName\tlastName");
+        System.out.println("id\t\tfirstName\t\tlastName");
         while(resultSet.next()) {
             int id=resultSet.getInt("id");
             String firstName=resultSet.getString("first_name");
             String lastName=resultSet.getString("last_name");
-            System.out.println(id+"\t"+firstName+"\t"+lastName);
+            System.out.println(id+"\t\t"+firstName+"\t\t"+lastName);
         }
     }
 }

@@ -1,11 +1,12 @@
 package ir.maktab.person;
 
 import ir.maktab.database.SqlPreparedStatmentForMaster;
+import ir.maktab.database.SqlStatment;
 
 import java.sql.SQLException;
 
 public class Master extends Person {
-    private final SqlPreparedStatmentForMaster sql = new SqlPreparedStatmentForMaster();
+    private final SqlStatment sql = new SqlPreparedStatmentForMaster();
     private int id;
 
     public Master() throws SQLException, ClassNotFoundException {
@@ -13,22 +14,22 @@ public class Master extends Person {
 
     @Override
     public void addToDatabase() throws SQLException {
-        sql.addMaster();
+        sql.add();
     }
 
     @Override
     public void updateDatabase() throws SQLException {
-        sql.updateMaster();
+        sql.update();
     }
 
     @Override
     public void deleteDatabase() throws SQLException {
-        sql.deleteMaster();
+        sql.delete();
     }
 
     @Override
     public void printDatabase() throws SQLException {
-        sql.printMasters();
+        sql.print();
     }
 
 

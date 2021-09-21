@@ -8,4 +8,6 @@ public abstract class Person {
 
     protected abstract void addToDatabase() throws SQLException;
     protected abstract void updateDatabase() throws SQLException;
+    protected abstract void deleteDatabase() throws SQLException;
+
 }

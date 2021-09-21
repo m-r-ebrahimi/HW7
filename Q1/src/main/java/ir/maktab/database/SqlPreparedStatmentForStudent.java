@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class SqlPreparedStatmentForStudent {
     private final Scanner scanner = new Scanner(System.in);
-    private static final String QUERY = "SELECT * FROM university.student";
+    private static final String QUERY = "SELECT * FROM university.student ";
     private final Connection connection = DbConnection.createConnection();
     private PreparedStatement ps;
 
@@ -16,7 +16,7 @@ public class SqlPreparedStatmentForStudent {
     }
 
     public void addStudent() throws SQLException {
-        String query =" INSERT INTO university.student (first_name, last_name) VALUES(?, ?);";
+        String query ="INSERT INTO university.student (first_name, last_name) VALUES(?, ?);";
         ps = connection.prepareStatement(query);
         System.out.println("Enter student' firstname : ");
         ps.setString(1, scanner.nextLine());
@@ -27,7 +27,7 @@ public class SqlPreparedStatmentForStudent {
     public void updateStudent() throws SQLException {
         System.out.println();
         printStudents();
-        String query = " UPDATE university.student SET first_name=?, last_name=? WHERE id=?;";
+        String query = "UPDATE university.student SET first_name=?, last_name=? WHERE id=?;";
         ps = connection.prepareStatement(query);
         System.out.println("Enter student' id: ");
         ps.setInt(3, scanner.nextInt());
@@ -36,6 +36,16 @@ public class SqlPreparedStatmentForStudent {
         ps.setString(1, scanner.nextLine());
         System.out.println("Enter new last name:");
         ps.setString(2, scanner.nextLine());
+    }
+
+    public void deleteStudent() throws SQLException {
+        System.out.println();
+        printStudents();
+        String query = "DELETE FROM university.student WHERE id=?;";
+        ps = connection.prepareStatement(query);
+        System.out.println("Enter student' id: ");
+        ps.setInt(1, scanner.nextInt());
+        scanner.nextLine();
     }
 
     public void printStudents() throws SQLException {

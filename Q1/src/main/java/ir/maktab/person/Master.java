@@ -1,7 +1,6 @@
 package ir.maktab.person;
 
 import ir.maktab.database.SqlPreparedStatmentForMaster;
-import ir.maktab.database.SqlStatment;
 
 import java.sql.SQLException;
 

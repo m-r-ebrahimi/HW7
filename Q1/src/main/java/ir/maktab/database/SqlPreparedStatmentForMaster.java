@@ -1,8 +1,6 @@
 package ir.maktab.database;
 
-import javax.sql.DataSource;
-import java.sql.*;
-import java.util.Scanner;
+import java.sql.SQLException;
 
 public class SqlPreparedStatmentForMaster extends SqlStatment {
     private static final String QUERYPRINT = "SELECT * FROM university.master ";

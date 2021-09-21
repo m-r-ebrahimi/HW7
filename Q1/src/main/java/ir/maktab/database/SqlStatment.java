@@ -48,12 +48,12 @@ public class SqlStatment {
     public void print(String QUERYPRINT) throws SQLException {
         ps = connection.prepareStatement(QUERYPRINT);
         ResultSet resultSet = ps.executeQuery();
-        System.out.println("id\t\tfirstName\t\tlastName");
+        System.out.println("id \t firstName \t lastName");
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
             String firstName = resultSet.getString("first_name");
             String lastName = resultSet.getString("last_name");
-            System.out.println(id + "\t\t" + firstName + "\t\t" + lastName);
+            System.out.println(id + "\t " + firstName + " \t\t " + lastName);
         }
 
     }

@@ -39,9 +39,22 @@ public class SqlStatment {
     public void delete(String QUERYDELETE) throws SQLException {
         System.out.println();
         ps = connection.prepareStatement(QUERYDELETE);
-        System.out.println("Enter student' id: ");
+        System.out.println("Enter id: ");
         ps.setInt(1, scanner.nextInt());
         scanner.nextLine();
+        ps.executeUpdate();
+    }
+
+    public void delete(String QUERYDELETE, String QUERYDELETELIST) throws SQLException {
+        System.out.println();
+        ps = connection.prepareStatement(QUERYDELETELIST);
+        System.out.println("Enter student' id: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        ps.setInt(1, id);
+        ps.executeUpdate();
+        ps = connection.prepareStatement(QUERYDELETE);
+        ps.setInt(1, id);
         ps.executeUpdate();
     }
 

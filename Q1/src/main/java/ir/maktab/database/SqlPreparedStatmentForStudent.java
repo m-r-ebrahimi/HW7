@@ -12,6 +12,7 @@ public class SqlPreparedStatmentForStudent extends SqlStatment{
     private static final String QUERYINSERT="INSERT INTO university.student (first_name, last_name) VALUES(?, ?);";
     private static final String QUERYUPDATE= "UPDATE university.student SET first_name=?, last_name=? WHERE id=?;";
     private static final String QUERYDELETE= "DELETE FROM university.student WHERE id=?;";
+    private static final String QUERYDELETELIST= "DELETE FROM university.list WHERE student_id=?;";
     private static final String QUERYADDMASTER= "INSERT INTO university.list (student_id, master_id) VALUES(?, ?);";
 
     public SqlPreparedStatmentForStudent() throws SQLException, ClassNotFoundException {
@@ -26,7 +27,7 @@ public class SqlPreparedStatmentForStudent extends SqlStatment{
     }
 
     public void delete() throws SQLException {
-        super.delete(QUERYDELETE);
+        super.delete(QUERYDELETE,QUERYDELETELIST);
     }
 
 

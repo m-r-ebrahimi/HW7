@@ -41,6 +41,8 @@ public class Demo {
                         """);
                 select = scanner.nextInt();
                 switch (select) {
+                    case 0 -> {
+                    }
                     case 1 -> student.printDatabase();
                     case 2 -> master.printDatabase();
                     case 3 -> student.addToDatabase();

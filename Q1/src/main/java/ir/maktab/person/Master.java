@@ -17,13 +17,18 @@ public class Master extends Person {
     }
 
     @Override
-    protected void updateDatabase() throws SQLException {
+    public void updateDatabase() throws SQLException {
         sql.updateMaster();
     }
 
     @Override
-    protected void deleteDatabase() throws SQLException {
+    public void deleteDatabase() throws SQLException {
         sql.deleteMaster();
+    }
+
+    @Override
+    public void printDatabase() throws SQLException {
+        sql.printMasters();
     }
 
 

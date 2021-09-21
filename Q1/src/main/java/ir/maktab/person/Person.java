@@ -6,8 +6,9 @@ public abstract class Person {
     private String firstName;
     private String lastName;
 
-    protected abstract void addToDatabase() throws SQLException;
-    protected abstract void updateDatabase() throws SQLException;
-    protected abstract void deleteDatabase() throws SQLException;
+    public abstract void addToDatabase() throws SQLException;
+    public abstract void updateDatabase() throws SQLException;
+    public abstract void deleteDatabase() throws SQLException;
+    public abstract void printDatabase() throws SQLException;
 
 }

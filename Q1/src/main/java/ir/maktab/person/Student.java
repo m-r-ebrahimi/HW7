@@ -23,8 +23,13 @@ public class Student extends Person {
     }
 
     @Override
-    protected void deleteDatabase() throws SQLException {
+    public void deleteDatabase() throws SQLException {
         sql.deleteStudent();
+    }
+
+    @Override
+    public void printDatabase() throws SQLException {
+        sql.printStudents();
     }
 
 

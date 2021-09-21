@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Student extends Person {
 
     private int id;
-    private SqlPreparedStatmentForStudent sql = new SqlPreparedStatmentForStudent();
+    private final SqlPreparedStatmentForStudent sql = new SqlPreparedStatmentForStudent();
 
     public Student() throws SQLException, ClassNotFoundException {
     }

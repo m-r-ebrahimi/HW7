@@ -3,7 +3,7 @@ package ir.maktab.database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SqlPreparedStatmentForStudent extends SqlStatment{
+public class SqlPreparedStatmentForStudent extends SqlStatement {
     private static final String QUERYPRINT= "SELECT * FROM university.student ";
     private static final String QUERYPRINTLIST= "SELECT * FROM university.list where student_id=?";
     private static final String QUERYINSERT="INSERT INTO university.student (first_name, last_name) VALUES(?, ?);";

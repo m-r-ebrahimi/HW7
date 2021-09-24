@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class SqlStatment {
+public class SqlStatement {
     protected final Scanner scanner = new Scanner(System.in);
     protected final Connection connection = DbConnection.createConnection();
     protected PreparedStatement ps;
 
-    public SqlStatment() throws SQLException, ClassNotFoundException {
+    public SqlStatement() throws SQLException, ClassNotFoundException {
     }
 
     public void add(String QUERYINSERT) throws SQLException {

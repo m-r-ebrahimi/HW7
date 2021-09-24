@@ -2,7 +2,7 @@ package ir.maktab.database;
 
 import java.sql.SQLException;
 
-public class SqlPreparedStatmentForMaster extends SqlStatment {
+public class SqlPreparedStatmentForMaster extends SqlStatement {
     private static final String QUERYPRINT = "SELECT * FROM university.master ";
     private static final String QUERYINSERT = "INSERT INTO university.master (first_name, last_name) VALUES(?, ?);";
     private static final String QUERYUPDATE = "UPDATE university.master SET first_name=?, last_name=? WHERE id=?;";
